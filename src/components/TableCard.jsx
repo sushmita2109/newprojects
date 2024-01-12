@@ -5,6 +5,8 @@ import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { useState } from "react";
+import "./TableCard.css";
 
 function createData(orderid, orderdate, orderamount, transactionfees) {
   return { orderid, orderdate, orderamount, transactionfees };
@@ -19,6 +21,30 @@ const rows = [
 ];
 
 export const TableCard = () => {
+  const [currentPage, setCureentPage] = useState(1);
+  const recordPerPage = 2;
+  const lastIndex = currentPage * recordPerPage;
+  const firstIndex = lastIndex - recordPerPage;
+  const records = rows.slice(firstIndex, lastIndex);
+  const nPage = Math.ceil(rows.length / recordPerPage);
+  const numbers = [...Array(nPage + 1).keys()].slice(1);
+
+  const nextPage = () => {
+    if (currentPage !== lastIndex) {
+      setCureentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage !== firstIndex) {
+      setCureentPage(currentPage - 1);
+    }
+  };
+
+  const changePage = (id) => {
+    setCureentPage(id);
+  };
+
   return (
     <Box>
       <Card>
@@ -52,7 +78,7 @@ export const TableCard = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {records.map((row) => (
               <TableRow
                 key={row.orderid}
                 sx={{
@@ -68,6 +94,33 @@ export const TableCard = () => {
             ))}
           </TableBody>
         </Table>
+        <nav>
+          <ul className="pagination">
+            <li className="page-item">
+              <a href="#" className="page-link" onClick={prevPage}>
+                Prev
+              </a>
+            </li>
+            <li>
+              {numbers.map((n, i) => (
+                <li className="page-item" key={indexedDB}>
+                  <a
+                    href="# "
+                    className="page-link"
+                    onClick={() => changePage(n)}
+                  >
+                    {n}
+                  </a>
+                </li>
+              ))}
+            </li>
+            <li className="page-item">
+              <a href="#" className="page-link" onClick={nextPage}>
+                Next
+              </a>
+            </li>
+          </ul>
+        </nav>
       </Card>
     </Box>
   );

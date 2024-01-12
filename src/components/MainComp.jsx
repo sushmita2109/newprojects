@@ -33,6 +33,7 @@ export const MainComp = () => {
             value={lastMonth}
             label="Last Month"
             onChange={handleChange}
+            sx={{ minWidth: 150 }}
           >
             <MenuItem value={1}>Jan</MenuItem>
             <MenuItem value={2}>Feb</MenuItem>

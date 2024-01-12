@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+.page-item {
+  border: 1px black solid;
+}
+
+.page-link {
+  text-decoration: none;
+}
