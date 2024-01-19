@@ -20,13 +20,15 @@ export const MainComp = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           maxWidth: "100%",
-          backgroundColor: "yellow",
-          gap: "2px",
+          backgroundColor: "#241d3a",
+          color: "white",
         }}
       >
         <h4>Overview</h4>
         <FormControl sx={{ m: 1, minWidth: 280 }}>
-          <InputLabel id="demo-simple-select-label">Last Month</InputLabel>
+          <InputLabel id="demo-simple-select-label" sx={{ color: "white" }}>
+            Last Month
+          </InputLabel>
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"

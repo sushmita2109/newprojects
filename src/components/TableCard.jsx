@@ -18,11 +18,14 @@ const rows = [
   createData(3, "7 July 23", 1343, 0.0),
   createData(4, "7 July 23", 3343, 20.0),
   createData(5, "7 July 23", 5343, 43.0),
+  createData(6, "7 July 23", 1243, 0.0),
+  createData(7, "7 July 23", 4343, 28.0),
+  createData(8, "7 July 23", 8343, 100.0),
 ];
 
 export const TableCard = () => {
   const [currentPage, setCureentPage] = useState(1);
-  const recordPerPage = 2;
+  const recordPerPage = 3;
   const lastIndex = currentPage * recordPerPage;
   const firstIndex = lastIndex - recordPerPage;
   const records = rows.slice(firstIndex, lastIndex);
@@ -101,7 +104,7 @@ export const TableCard = () => {
                 Prev
               </a>
             </li>
-            <li>
+            <li className="page-item" style={{ display: "flex" }}>
               {numbers.map((n, i) => (
                 <li className="page-item" key={indexedDB}>
                   <a

@@ -10,9 +10,8 @@ export const AppBarTitle = () => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        padding: "8px",
-        gap: "2px",
-        backgroundColor: "pink",
+        backgroundColor: "#46465c",
+        color: "white",
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "row" }}>

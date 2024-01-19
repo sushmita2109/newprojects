@@ -17,7 +17,10 @@ import nishyan from "../nishyan.png";
 
 export const Sidebar = () => {
   return (
-    <Box className="sidebar">
+    <Box
+      className="sidebar"
+      sx={{ backgroundColor: "#46465c", height: "100vh" }}
+    >
       <Box sx={{ display: "flex", flexDirection: "row", marginBottom: "5px" }}>
         <img
           src={nishyan}

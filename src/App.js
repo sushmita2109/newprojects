@@ -22,7 +22,6 @@ function App() {
             display: "flex",
             flexDirection: "column",
             width: "100%",
-            gap: "2px",
           }}
         >
           <AppBarTitle />
